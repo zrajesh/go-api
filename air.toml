@@ -1,0 +1,10 @@
+# air.toml
+root = "."  # the root directory of your project
+
+[[watcher]]
+  goext = ["go"]  # the file extensions to watch
+  include = [".git", "tmp", "vendor"]  # the directories to include
+  exclude = []  # the directories to exclude
+
+  [watcher.command]
+    go = ["run", "."]  # the command to run when changes are detected
