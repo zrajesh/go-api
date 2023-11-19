@@ -63,6 +63,11 @@ func createProductHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if r.Body == nil {
+		json.NewEncoder(w).Encode("Please send some data")
+		return
+	}
+
 	// Read the request body
 	body, err := io.ReadAll(r.Body)
 	handleNil(err, "Error reading request body: ")
